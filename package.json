@@ -1,0 +1,19 @@
+{
+  "name": "authenticationplugin",
+  "version": "1.0.0",
+  "description": "Cordova plugin for android and iOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaiPrasanth108/AuthenticationPlugin.git"
+  },
+  "author": "Sai Prasanth R",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaiPrasanth108/AuthenticationPlugin/issues"
+  },
+  "homepage": "https://github.com/SaiPrasanth108/AuthenticationPlugin#readme"
+}
