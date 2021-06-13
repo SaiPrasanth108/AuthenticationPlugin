@@ -6,7 +6,7 @@ class AuthenticationPlugin : CDVPlugin{
     
     var pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR)
     
-    @objc(authenticateFaceIdOrTouchId:)
+    @objc(authenticateFaceIdOrTouchId:) 
     func authenticateFaceIdOrTouchId(_ command: CDVInvokedUrlCommand) {
         let context = LAContext()
         var error: NSError?
@@ -22,7 +22,7 @@ class AuthenticationPlugin : CDVPlugin{
                         print("error")
                         let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified; please try again.", preferredStyle: .alert)
                         ac.addAction(UIAlertAction(title: "OK", style: .default))
-                        self?.viewController?.present(ac, animated: true)
+                        self?.viewController.present(ac, animated: true)
                         self?.pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Authentication failed")
                     }
                 }
@@ -31,7 +31,7 @@ class AuthenticationPlugin : CDVPlugin{
             print("no biometric")
             let ac = UIAlertController(title: "Biometry unavailable", message: "Your device is not configured for biometric authentication.", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
-            self.viewController?.present(ac, animated: true)
+            viewController.present(ac, animated: true)
             pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Biometry unavailable")
         }
         self.commandDelegate!.send(pluginResult, callbackId: command.callbackId)
